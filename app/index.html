@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>縁 -yosuga- Online Shop</title>
+  <link rel="stylesheet" href="main.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="yosuga.js"></script>
+</head>
+
+<body>
+  <div id="yosugaApp">
+
+    <!-- 検索ボックス -->
+    <div class="searchArea">
+      <p class="logo" v-on:click="backHOME">縁 -yosuga- Online Shop</p>
+      <input class="searchBox" type="text" v-model="input" v-on:keydown.enter="searchingAll">
+      <i class="material-icons searchIcon" v-on:click="searchingAll">search</i>
+      <button class="historyBtn" v-on:click="showHistory = true">購入履歴</button>
+    </div>
+
+    <!-- 購入完了モーダル -->
+    <div class="orderArea" v-if="showOrder == true">
+      <div class="orderThanks">
+        <p>ご購入ありがとうございました。</p>
+        <p v-on:click="backHOME">＜ back TOP PAGE</p>
+      </div>
+    </div>
+
+    <!-- 購入履歴 -->
+    <div class="historyArea" v-if="showHistory == true">
+      <div class="lookHistory">
+        <div v-for="Product in boughtArray" v-bind:key="Product.id">
+          <div>
+            <p>{{Product.bought}}　{{Product.Date}}</p>
+          </div>
+        </div>
+        <p v-on:click="showHistory = false">＜ back</p>
+      </div>
+    </div>
+
+    <!---- HOME画面 ---->
+    <div class="homeArea" v-if="showHOME == true">
+      <!-- ナビゲーション -->
+      <div class="navArea">
+        <h3>〜カテゴリ検索〜</h3>
+        <ul class="navi">
+          <li v-on:click="searchingByTag('筆記具')">筆記具</li>
+          <li v-on:click="searchingByTag('帳面')">帳面・原稿用紙</li>
+          <li v-on:click="searchingByTag('便箋')">便箋</li>
+        </ul>
+      </div>
+      <!-- HOME -->
+      <div>
+        <!-- <img src="images/原稿用紙.jpg"> -->
+        <div class="topLogo">
+          <img class="topImg" src="images/原稿用紙.jpg">
+          <div class="topStr">
+            <p class="Str1">縁</p>
+            <p class="Str2">-yosuga-</p>
+            <p class="Str3">文豪の描き心地を、貴方に。</p>
+            <p class="tate">『縁』とは、人と人のつながりを表す。<br>私たちは職人の技や伝統を詰め込んだ<br>「文房具」と「皆様」をつなげる橋と<br>して、一つ一つを丁寧にお届けします。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 検索後画面 -->
+    <div class="productsArea" v-if="showHOME == false">
+      <div class="displayArea" v-if="showList == true && showPickupArea == false">
+        <!-- リスト検索時のみ表示 -->
+        <div class="pen title" v-if="Tag == '筆記具' ">
+          <h1>〼筆記具</h1>
+          <p>インクから持ちやすさまで、全てを追求したペンの数々です。</p>
+        </div>
+        <div class="note title" v-if="Tag == '帳面' ">
+          <h1>〼帳面・原稿用紙</h1>
+          <p>インクから持ちやすさまで、全てを追求したペンの数々です。</p>
+        </div>
+        <div class="letter title" v-if="Tag == '便箋' ">
+          <h1>〼便箋</h1>
+          <p>大切な人に贈りたい、和紙を使用した上質な品です。</p>
+        </div>
+      </div>
+
+      <!-- ピックアップ欄 -->
+      <div v-if="showPickupArea == true">
+        <div class="productBox" v-for="Product in pickupArray" v-bind:name="Product.id">
+          <div class="flexBox">
+            <img class="half" v-bind:src="Product.image">
+            <div class="half pickupStr">
+              <p class="productTitle">{{ Product.name }}</p>
+              <p>{{ Product.explanation }}</p>
+              <p>{{ Product.price }}円（税込）</p>
+              <p>在庫数: {{ Product.stock }}個</p>
+              <button v-on:click="orderItem($event);unshiftHistory(Product.name)" v-bind:name="Product.id">購入</button>
+            </div>
+          </div>
+        </div>
+        <p class="back" v-on:click="showPickupArea = false">＜ back</p>
+      </div>
+
+
+
+      <div v-if="showPickupArea == false">
+        <div class="switch">
+          <button v-on:click="showBlock = true">ブロック表示</button>
+          <button v-on:click="showBlock = false">リスト表示</button>
+        </div>
+
+        <!-- 商品欄（ブロック） -->
+        <div class="blockArea" v-if="showBlock == true">
+          <p class="back" v-on:click="backHOME">＜ back</p>
+          <div class="flexBox">
+            <div class="productBox" v-for="Product in ProductArray" v-bind:key="Product.id">
+              <img v-bind:src="Product.image">
+              <p class="productTitle">{{ Product.name }}</p>
+              <p>{{ Product.price }}円（税込） 在庫数: {{ Product.stock }}個</p>
+              <div>
+                <p>
+                  <button v-on:click="showPickup(Product.name)">商品詳細</button>
+                </p>
+              </div>
+            </div>
+          </div>
+          <p class="back" v-on:click="backHOME()">＜ back</p>
+        </div>
+
+
+        <!-- 商品欄（リスト） -->
+        <div class="listArea" v-if="showBlock == false">
+          <p class="back" v-on:click="backHOME">＜ back</p>
+          <div class="productBox flexBox" v-for="Product in ProductArray" v-bind:key="Product.id">
+            <div class="listName">
+              <p>{{ Product.name }}　| {{ Product.price }}円（税込）</p>
+            </div>
+            <div class="listButton">
+              <p>在庫数: {{ Product.stock }}個</p>
+              <button v-on:click="showPickup(Product.name)">商品詳細</button>
+            </div>
+          </div>
+          <p class="back" v-on:click="backHOME">＜ back</p>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+</body>
+
+</html>

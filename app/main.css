@@ -1,0 +1,276 @@
+* {
+    font-weight: 100;
+}
+
+p {
+    font-size: 110%;
+}
+
+button {
+    background-color: #826f49;
+    color: #F4F2ED;
+    border: double 2px #F4F2ED;
+    padding: 10px;
+    width: 160px;
+    font-size: 100%;
+    font-family: 'Shippori Mincho B1', serif;
+}
+
+button:hover {
+    background-color: #c7a35a;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #F4F2ED;
+    color: #373634;
+    font-family: 'Shippori Mincho B1', serif;
+}
+
+img {
+    width: 270px;
+    border-radius: 0 0 20% 0;
+}
+
+h3 {
+    text-align: center;
+    font-size: 160%;
+    border-bottom: 1px #373634 solid;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    margin: 0 40px;
+}
+
+
+/* 検索欄 */
+.searchArea {
+    display: flex;
+    align-items: center;
+}
+
+/* yosugaOnline */
+.logo {
+    margin-left: 20px;
+    font-size: 120%;
+}
+
+.logo:hover {
+    color: #826f49;
+    font-weight: 800;
+}
+
+/* 検索ボックス */
+.searchBox {
+    border: none;
+    width: 300px;
+    margin-left: 23%;
+    font-size: 120%;
+    background-color: #F4F2ED;
+    border-bottom: solid 1px #373634;
+}
+
+/* HOME画面 */
+.homeArea {
+    display: flex;
+    width: 100%;
+}
+
+/* 左側・ナビ*/
+.navArea {
+    width: 30%;
+    list-style-type: none;
+    margin: auto;
+}
+
+.navi {
+    border-left: #373634 10px solid;
+    margin-left: 20px;
+    font-size: 20px;
+    list-style-type: none;
+    margin-right: 20px;
+}
+
+.navi li {
+    padding: 5px 0;
+}
+
+.navi li:hover {
+    color: #2d85cd;
+    border-bottom: #2d85cd 1px solid;
+}
+
+/* 左側・ロゴ*/
+.topLogo {
+    display: flex;
+}
+
+/* 右側 */
+.top {
+    width: 70%;
+}
+
+.topStr {
+    text-align: center;
+    margin: auto;
+}
+
+.tate {
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+    line-height: 50px;
+}
+
+/* 検索後 */
+.productsArea {
+    width: 70%;
+    margin: 0 auto;
+}
+
+/* 中央 */
+.topImg {
+    width: 65%;
+}
+
+/* タグタイトル */
+.title {
+    color: #373634;
+    margin: auto;
+    padding-left: 20px;
+    margin-bottom: 50px;
+}
+
+.Str1 {
+    font-size: 500%;
+    margin: 0;
+}
+
+.Str2 {
+    font-size: 200%;
+    margin: 0;
+}
+
+.Str3 {
+    margin-bottom: 20px;
+    padding-bottom: 50px;
+    border-bottom: #373634 1px solid;
+}
+
+/* テーマカラー指定 */
+.pen {
+    border-left: #2c257c 20px solid;
+}
+
+.note {
+    border-left: #7C1414 20px solid;
+}
+
+.letter {
+    border-left: #1B5833 20px solid;
+}
+
+/*リスト選択*/
+.switch {
+    margin-left: 65%;
+}
+
+/* ブロックCSS */
+.flexBox {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.productBox {
+    margin: 0 15px;
+    background-color: aliceblue;
+    padding: 14px;
+    margin-bottom: 20px;
+    border: #826f49 solid;
+    box-shadow: #826f49 5px 5px 0px;
+}
+
+.productTitle {
+    font-size: 160%;
+}
+
+/* リストCSS */
+.listButton {
+    width: 20%;
+}
+
+.listName {
+    font-size: 130%;
+    width: 80%;
+}
+
+/* 注文モーダル */
+.orderArea {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.orderThanks {
+    padding: 10px;
+    z-index: 2;
+    width: 60%;
+    height: 200px;
+    background: #fff;
+    line-height: 80px;
+    text-align: center;
+}
+
+/* 履歴 */
+.historyBtn {
+    margin-left: 370px;
+    margin-right: 10px;
+}
+
+.historyArea {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lookHistory {
+    padding: 10px;
+    z-index: 2;
+    width: 60%;
+    height: auto;
+    background: #fff;
+    line-height: 80px;
+    text-align: center;
+}
+
+/* ピックアップ画面 */
+.half{
+    width: 45%;
+}
+
+img.half{
+    padding: 10px;
+}
+
+/* 戻る */
+.back{
+    font-size: 120%;
+}
+
+.back:hover{
+    border-bottom: #373634 0.5px solid;
+    margin-right: 700px;
+}

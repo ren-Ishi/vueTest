@@ -1,0 +1,94 @@
+{
+  "Products": [
+    {
+      "id": 1,
+      "hashtag": "筆記具",
+      "stock": 9,
+      "name": "鉛筆　/1ダース",
+      "image": "images/鉛筆.jpg",
+      "price": 3000,
+      "explanation": "純度の高い黒鉛と粘土を使用、吸いつくような書き心地です。デッサンや製図用にも。"
+    },
+    {
+      "id": 2,
+      "hashtag": "帳面",
+      "stock": 10,
+      "name": "原稿用紙　/50枚",
+      "image": "images/原稿用紙.jpg",
+      "price": 3200,
+      "explanation": "昭和の文豪から最高の品質と評価された、京都の原稿用紙です。"
+    },
+    {
+      "id": 3,
+      "hashtag": "筆記具",
+      "stock": 10,
+      "name": "色鉛筆　/72色",
+      "image": "images/色鉛筆.jpg",
+      "price": 54000,
+      "explanation": "発色が良く、拘り抜いた色が揃ったセットです。"
+    },
+    {
+      "id": 4,
+      "hashtag": "便箋",
+      "stock": 10,
+      "name": "クラフト便箋　/10通",
+      "image": "images/クラフト便箋.jpg",
+      "price": 750,
+      "explanation": "洋風ながら和紙の味わいを生かした、大切な人への手紙にぴったりの一品。"
+    },
+    {
+      "id": 5,
+      "hashtag": "筆記具",
+      "stock": 10,
+      "name": "万年筆",
+      "image": "images/万年筆.jpg",
+      "price": 48000,
+      "explanation": "職人が一本一本美しく仕上げた、当店の看板商品です。"
+    },
+    {
+      "id": 6,
+      "hashtag": "便箋",
+      "stock": 6,
+      "name": "縦書き便箋　/30枚",
+      "image": "images/縦書き便箋.jpg",
+      "price": 1100,
+      "explanation": "素朴な紙の色合いと、高級感のある紙質が自慢です。"
+    },
+    {
+      "id": 7,
+      "hashtag": "筆記具",
+      "stock": 10,
+      "name": "ガラスペン",
+      "image": "images/ガラスペン.jpg",
+      "price": 6900,
+      "explanation": "本場ヴェネチアンガラスでできた透明感あふれるペンです。（※ミニインク付き）"
+    },
+    {
+      "id": 8,
+      "hashtag": "帳面",
+      "stock": 10,
+      "name": "無地ノート",
+      "image": "images/無地ノート.jpg",
+      "price": 780,
+      "explanation": "まっさらで肌触りの良い、シンプルなノートです。"
+    },
+    {
+      "hashtag": "帳面",
+      "name": "方眼ノート",
+      "image": "images/方眼ノート.jpg",
+      "stock": 10,
+      "price": 820,
+      "explanation": "懐かしさのある方眼の線と使いやすさを考えた目印付きの万能ノートです。",
+      "id": 9
+    },
+    {
+      "id": 10,
+      "hashtag": "筆記具",
+      "stock": 8,
+      "name": "インク",
+      "image": "images/インク.jpg",
+      "price": 3000,
+      "explanation": "色ブレの少ない、万能インク。ケースもユニークです。"
+    }
+  ]
+}
